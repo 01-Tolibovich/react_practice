@@ -1,5 +1,5 @@
-const Persons = (props) => {
-  const { firstName, lastName, email, image } = props;
+const Persons = (person) => {
+  const { firstName, lastName, email, image } = person;
 
   return (
     <div>

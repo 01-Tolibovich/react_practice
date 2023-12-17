@@ -6,6 +6,7 @@ import SimpleComponent from "./components/SimpleComponent";
 import Counter from "./components/counter/Counter";
 import Button from "./components/counter/Button";
 import Persons from "./components/Persons";
+import ResetCounter from "./components/counter/ResetCounter";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -14,6 +15,10 @@ function App() {
 
   const handleCounter = () => {
     setCounter(counter + 1);
+  };
+
+  const resetCounter = () => {
+    setCounter(0);
   };
 
   return (
@@ -26,16 +31,11 @@ function App() {
       {texts.map((text, index) => {
         return <Button conter1={handleCounter} text={text} />;
       })}
-      {persons.map((person, id) => {
-        return (
-          <Persons
-            key={id}
-            firstName={person.first_name}
-            lastName={person.last_name}
-            email={person.email}
-            image={person.image}
-          />
-        );
+      {counter > 0 && (
+        <ResetCounter resetCounter={resetCounter} text={"Reset"} />
+      )}
+      {persons.map((person) => {
+        return <Persons key={person.id} {...person} />;
       })}
     </div>
   );
