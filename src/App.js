@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import persons from "./data/persons";
+import "./App.css";
+import RandomNum from "./components/RandomNum";
+import SimpleComponent from "./components/SimpleComponent";
+import Counter from "./components/counter/Counter";
+import Button from "./components/counter/Button";
+import Persons from "./components/Persons";
 
 function App() {
+  const [counter, setCounter] = useState(0);
+
+  const texts = ["click me", "click", "press me", "hit me"];
+
+  const handleCounter = () => {
+    setCounter(counter + 1);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SimpleComponent animal="cat" age="2" />
+      <SimpleComponent animal="dog" age="5" />
+      <SimpleComponent animal="bird" age="1" />
+      <RandomNum maxnumber={10000} />
+      <Counter counter={counter} />
+      {texts.map((text, index) => {
+        return <Button conter1={handleCounter} text={text} />;
+      })}
+      {persons.map((person, id) => {
+        return (
+          <Persons
+            key={id}
+            firstName={person.first_name}
+            lastName={person.last_name}
+            email={person.email}
+            image={person.image}
+          />
+        );
+      })}
     </div>
   );
 }
