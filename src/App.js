@@ -7,6 +7,7 @@ import Counter from "./components/counter/Counter";
 import Button from "./components/counter/Button";
 import Persons from "./components/Persons";
 import ResetCounter from "./components/counter/ResetCounter";
+import Input from "./components/Input";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -37,6 +38,8 @@ function App() {
       {persons.map((person) => {
         return <Persons key={person.id} {...person} />;
       })}
+      <br/>
+      <Input/>
     </div>
   );
 }
