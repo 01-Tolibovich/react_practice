@@ -7,6 +7,8 @@ import Counter from "./components/counter/Counter";
 import Button from "./components/counter/Button";
 import Persons from "./components/Persons";
 import ResetCounter from "./components/counter/ResetCounter";
+import UseEffect from "./components/UseEffect";
+import Posts from "./components/blog/Posts";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -37,6 +39,10 @@ function App() {
       {persons.map((person) => {
         return <Persons key={person.id} {...person} />;
       })}
+      <UseEffect />
+      <br />
+      <Posts />
+      <br />
     </div>
   );
 }
