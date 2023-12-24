@@ -9,6 +9,7 @@ import Persons from "./components/Persons";
 import ResetCounter from "./components/counter/ResetCounter";
 import UseEffect from "./components/UseEffect";
 import Posts from "./components/blog/Posts";
+import Input from "./components/Input";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -43,6 +44,8 @@ function App() {
       <br />
       <Posts />
       <br />
+      <br/>
+      <Input/>
     </div>
   );
 }
