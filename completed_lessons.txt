@@ -246,6 +246,14 @@
 202. Подведение итогов по проекту с массивом постов
 
 Раздел 26 Проект с async await в useEffect
+203. Проект с async await в useEffect
+204. Передача async функции в useEffect
+205. Почему в useEffect нельзя передавать асинхронную функцию
+206. Создание отдельной async функции
+207. Использование IIFE - Immediately Invoked Function Expression
+208. Подведение итогов по проекту с async await
+
+Раздел 27 Проект с модулями CSS
 
 
 
